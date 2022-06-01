@@ -1,0 +1,74 @@
+@import "colors";
+@import "media-queries";
+
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  background-color: $light;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 9px;
+  z-index: 10;
+
+  &__logo {
+    text-decoration: none;
+    color: $dark;
+    font-size: 2rem;
+    @extend %align-center;
+  }
+
+  &__bars {
+    opacity: 0;
+
+    @include tablet {
+      color: $dark;
+      opacity: 1;
+      position: absolute;
+      top: 21px;
+      right: 20px;
+      font-size: 2rem;
+    }
+  }
+
+  &__menu {
+    text-align: center;
+    list-style: none;
+    margin-right: 25px;
+    @extend %align-center;
+
+    @include tablet {
+      display: none;
+    }
+
+    &--links {
+      color: $dark;
+      justify-content: center;
+      text-decoration: none;
+      padding: 0 1rem;
+      font-weight: bold;
+
+      &:hover {
+        color: $lime;
+        transition: all 0.4s ease;
+      }
+    }
+
+    #button {
+      background: $lime;
+      color: $light;
+      padding: 10px 20px;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+
+      &:hover {
+        background: $orangeRed;
+      }
+    }
+  }
+}
